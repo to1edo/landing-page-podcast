@@ -1,0 +1,45 @@
+@use 'base/mixins' as m
+@use 'base/variables' as v;s 
+
+
+.crea-podcast{
+    position: relative;
+    &::before{
+        content: '';
+        background-image: url(/build/img/wave.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 33rem;
+        width: 100%;
+        position: absolute;
+        top:-23rem;
+        @include m.desktop{ 
+            top: -25rem;
+        }
+    }
+}
+
+.crea-grid{
+    text-align: center;
+
+    h2{
+        @include m.headingBorder(v.$secundario, v.$primario)
+    }
+    @include m.tablet{ 
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+        align-items: center;
+
+        p{
+            text-align: left;
+        }
+    }
+    
+    img{
+        position: relative;
+        z-index:1;
+    }
+
+    
+}
